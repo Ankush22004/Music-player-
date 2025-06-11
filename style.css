@@ -200,3 +200,21 @@ audio {
   cursor: pointer;
 }
 
+.song-item {
+  transition: all 0.3s ease;
+}
+
+.sleep-btn {
+  background-color: #795548;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
