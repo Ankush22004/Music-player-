@@ -177,3 +177,13 @@ audio {
   cursor: pointer;
 }
 
+.storage-btn {
+  background-color: #607d8b;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
