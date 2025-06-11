@@ -4,14 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🎶 BharatVerse Music Player</title>
+
+  <!-- Essentials -->
   <script src="lock.js"></script>
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="icon.png" />
 </head>
 <body>
   <div class="container">
+    <!-- Greeting + Title -->
+    <div id="profileGreeting"></div>
     <h1>🎧 BharatVerse Music Player</h1>
 
+    <!-- Upload & Category -->
     <div class="upload-section">
       <input type="file" id="fileInput" accept=".mp3,.m4a" multiple />
       <select id="categorySelect">
@@ -22,41 +28,67 @@
       <button onclick="addSongs()">Upload</button>
     </div>
 
+    <!-- Language + Extras -->
+    <div class="utility-section">
+      <select id="languageSelect" class="lang-select"></select>
+      <div id="githubLink"></div>
+    </div>
+
+    <!-- Music List -->
     <div id="musicList"></div>
 
+    <!-- Player + Progress -->
     <audio id="audioPlayer" controls></audio>
+    <input type="range" id="progressBar" class="progress-bar" />
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="prevBtn">⏮️</button>
+      <button id="nextBtn">⏭️</button>
+    </div>
+
+    <!-- Dynamic Features -->
+    <div id="queueContainer"></div>
+    <div id="favoriteContainer"></div>
+    <div id="suggestionBox"></div>
   </div>
 
-  <script src="script.js"></script>
-<script src="search.js"></script>
-<script src="delete.js"></script>
+  <!-- Canvas Equalizer -->
+  <canvas id="equalizerCanvas" height="60"></canvas>
 
-<script src="controls.js"></script>
-<script src="playlist.js"></script>
-<script src="background.js"></script>
-<script src="progress.js"></script>
-<script src="shuffle.js"></script>
-<script src="download.js"></script>
-<script src="favorites.js"></script>
-<script src="repeat.js"></script>
-<script src="storage.js"></script>
-<script src="voice.js"></script>
-<script src="pwa.js"></script>
-<script src="playlist-export.js"></script>
-<script src="animations.js"></script>
-<script src="backgrounds.js"></script>
-<script src="sleeptimer.js"></script>
-<script src="equalizer.js"></script>
-<script src="analytics.js"></script>
-<script src="lang.js"></script>
-<script src="profile.js"></script>
-<script src="notify.js"></script>
-<script src="suggest.js"></script>
-<script src="github.js"></script>
-<script src="auth.js"></script>
-<script src="stream.js"></script>
-<script src="recorder.js"></script>
-<script src="webview.js"></script>
-<script src="offline.js"></script>
+  <!-- SCRIPT FILES -->
+  <!-- Core -->
+  <script src="script.js"></script>
+  <script src="pwa.js"></script>
+  <script src="auth.js"></script>
+
+  <!-- Features -->
+  <script src="profile.js"></script>
+  <script src="lang.js"></script>
+  <script src="search.js"></script>
+  <script src="delete.js"></script>
+  <script src="controls.js"></script>
+  <script src="playlist.js"></script>
+  <script src="background.js"></script>
+  <script src="progress.js"></script>
+  <script src="shuffle.js"></script>
+  <script src="download.js"></script>
+  <script src="favorites.js"></script>
+  <script src="repeat.js"></script>
+  <script src="storage.js"></script>
+  <script src="voice.js"></script>
+  <script src="playlist-export.js"></script>
+  <script src="animations.js"></script>
+  <script src="backgrounds.js"></script>
+  <script src="sleeptimer.js"></script>
+  <script src="equalizer.js"></script>
+  <script src="analytics.js"></script>
+  <script src="notify.js"></script>
+  <script src="suggest.js"></script>
+  <script src="github.js"></script>
+  <script src="stream.js"></script>
+  <script src="recorder.js"></script>
+  <script src="webview.js"></script>
+  <script src="offline.js"></script>
 </body>
 </html>
