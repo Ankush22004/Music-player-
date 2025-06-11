@@ -1,43 +1,52 @@
-/* style.css */
+/* === Reset & Body === */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #121212;
   color: #ffffff;
+  line-height: 1.6;
 }
 
+/* === Container === */
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   padding: 20px;
   text-align: center;
 }
 
+/* === Heading === */
 h1 {
   color: #ff9800;
   margin-bottom: 20px;
 }
 
+/* === Upload Section === */
 .upload-section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
 .upload-section input,
 .upload-section select,
 .upload-section button {
-  margin: 10px 0;
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
   border: none;
 }
 
-.upload-section input,
+.upload-section input[type="file"],
 .upload-section select {
-  width: 70%;
+  background-color: #1e1e1e;
+  color: #fff;
 }
 
 .upload-section button {
@@ -51,56 +60,87 @@ h1 {
   background-color: #ffa726;
 }
 
+/* === Utility Section (lang, GitHub etc.) === */
+.utility-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* === Category Title === */
 .category-title {
   margin-top: 30px;
   color: #90caf9;
   text-align: left;
 }
 
+/* === Song Item === */
 .song-item {
-  padding: 10px;
+  padding: 10px 15px;
   background-color: #1f1f1f;
   margin: 5px 0;
   border-radius: 5px;
   cursor: pointer;
   text-align: left;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .song-item:hover {
-  background-color: #333;
+  background-color: #2a2a2a;
 }
 
+/* === Delete / Download Buttons === */
+.delete-btn,
+.download-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: transparent;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  color: #f44336;
+}
+
+.download-btn {
+  color: #03a9f4;
+  right: 40px;
+  text-decoration: none;
+}
+
+/* === Audio Player === */
 audio {
   width: 100%;
   margin-top: 20px;
   border-radius: 5px;
+  background: #1f1f1f;
 }
 
-.search-bar {
-  padding: 10px;
-  font-size: 16px;
-  width: 80%;
-  margin: 10px auto;
+/* === Progress Bar === */
+.progress-bar {
+  width: 100%;
+  margin-top: 10px;
+  appearance: none;
+  height: 8px;
   border-radius: 5px;
-  border: none;
-  display: block;
-  background-color: #1e1e1e;
-  color: white;
+  background: #444;
+  outline: none;
 }
 
-.delete-btn {
-  float: right;
-  background: transparent;
-  color: red;
-  border: none;
-  font-size: 18px;
+.progress-bar::-webkit-slider-thumb {
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #ff9800;
   cursor: pointer;
 }
 
-
-
-
+/* === Controls (Prev/Next) === */
 .controls {
   display: flex;
   justify-content: center;
@@ -118,118 +158,65 @@ audio {
   cursor: pointer;
 }
 
-#queueContainer {
+/* === Queue, Favorites, Suggestions === */
+#queueContainer,
+#favoriteContainer,
+#suggestionBox {
+  max-width: 900px;
   margin: 30px auto;
-  max-width: 800px;
-  background: #1f1f1f;
+  background: #1e1e1e;
   padding: 15px;
   border-radius: 8px;
 }
 
-
-.progress-bar {
-  width: 100%;
-  margin-top: 10px;
-  appearance: none;
-  height: 8px;
-  border-radius: 5px;
-  background: #444;
-  outline: none;
-  transition: background 0.3s;
-}
-.progress-bar::-webkit-slider-thumb {
-  appearance: none;
-  height: 14px;
-  width: 14px;
-  border-radius: 50%;
-  background: #ff9800;
-  cursor: pointer;
-}
-
-
-.shuffle-btn {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
-  margin-top: 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.download-btn {
-  float: right;
-  text-decoration: none;
-  font-size: 18px;
-  margin-left: 10px;
-  color: #03a9f4;
-}
-
-.repeat-btn {
-  background-color: #9c27b0;
-  color: white;
-  padding: 10px;
-  margin-top: 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.storage-btn {
-  background-color: #607d8b;
-  color: white;
-  margin-top: 10px;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
+/* === Buttons General === */
+.shuffle-btn,
+.repeat-btn,
+.storage-btn,
+.sleep-btn,
+.analytics-btn,
 .export-btn,
-.import-btn {
-  background-color: #f44336;
-  color: white;
-  padding: 10px;
+.import-btn,
+.record-btn,
+.stream-btn,
+.github-btn {
+  display: inline-block;
   margin-top: 10px;
+  padding: 10px;
   font-size: 14px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.song-item {
-  transition: all 0.3s ease;
-}
-
-.sleep-btn {
-  background-color: #795548;
   color: white;
+}
+
+.shuffle-btn { background-color: #4caf50; }
+.repeat-btn  { background-color: #9c27b0; }
+.storage-btn { background-color: #607d8b; }
+.sleep-btn   { background-color: #795548; }
+.analytics-btn { background-color: #03a9f4; }
+.export-btn,
+.import-btn { background-color: #f44336; }
+.record-btn { background-color: #e91e63; }
+.stream-btn { background-color: #009688; }
+.github-btn { background-color: #24292e; text-decoration: none; }
+
+/* === Search Bar === */
+.search-bar {
   padding: 10px;
-  margin-top: 10px;
   font-size: 16px;
-  border: none;
+  width: 80%;
+  margin: 10px auto;
   border-radius: 5px;
-  cursor: pointer;
-}
-
-.analytics-btn {
-  background-color: #03a9f4;
+  border: none;
+  background-color: #1e1e1e;
   color: white;
-  padding: 10px;
-  margin-top: 10px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
+/* === Language + Greeting === */
 .lang-select {
   padding: 8px;
   font-size: 14px;
-  margin-top: 10px;
 }
 
 .welcome-banner {
@@ -238,46 +225,14 @@ audio {
   color: #ff9800;
 }
 
-#suggestionBox {
-  max-width: 800px;
-  margin: 30px auto;
-  background: #1e1e1e;
-  padding: 15px;
+/* === Equalizer Canvas === */
+#equalizerCanvas {
+  width: 100%;
+  background: #000;
+  display: block;
+  margin-top: 20px;
   border-radius: 5px;
 }
-
-.record-btn {
-  background-color: #e91e63;
-  color: white;
-  margin-top: 10px;
-  padding: 10px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-}
-.stream-btn {
-  background-color: #009688;
-  color: white;
-  margin-top: 10px;
-  padding: 10px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-}
-
-
-.github-btn {
-  background-color: #24292e;
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  font-size: 14px;
-  margin-top: 10px;
-  border-radius: 5px;
-}
-
-
-
 
 
 
