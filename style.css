@@ -246,6 +246,37 @@ audio {
   border-radius: 5px;
 }
 
+.record-btn {
+  background-color: #e91e63;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+}
+.stream-btn {
+  background-color: #009688;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+}
+
+
+.github-btn {
+  background-color: #24292e;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+
 
 
 
