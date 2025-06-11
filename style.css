@@ -100,3 +100,30 @@ audio {
 
 
 
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.controls button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ff9800;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#queueContainer {
+  margin: 30px auto;
+  max-width: 800px;
+  background: #1f1f1f;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+
