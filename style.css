@@ -127,3 +127,21 @@ audio {
 }
 
 
+.progress-bar {
+  width: 100%;
+  margin-top: 10px;
+  appearance: none;
+  height: 8px;
+  border-radius: 5px;
+  background: #444;
+  outline: none;
+  transition: background 0.3s;
+}
+.progress-bar::-webkit-slider-thumb {
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #ff9800;
+  cursor: pointer;
+}
