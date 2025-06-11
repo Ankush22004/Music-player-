@@ -157,3 +157,11 @@ audio {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.download-btn {
+  float: right;
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 10px;
+  color: #03a9f4;
+}
