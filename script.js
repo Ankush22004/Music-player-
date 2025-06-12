@@ -22,7 +22,10 @@ function addSongs() {
   localStorage.setItem("musicLibrary", JSON.stringify(musicLibrary));
   renderSongs();
 }
-
+<script src="script.js"></script>
+<script src="upload-base64.js"></script>
+<!-- or -->
+<script src="upload-indexeddb.js"></script>
 function renderSongs() {
   musicList.innerHTML = "";
   for (let category in musicLibrary) {
